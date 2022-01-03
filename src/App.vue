@@ -20,8 +20,8 @@ const fetchSearch = async () => {
   let url = env.DEV ? env.VITE_DEV_SERVER_URL : env.VITE_PROD_SERVER_URL
   url += "?q=" + searchInput.value
   console.log('url', url)
-  const res = await axios.get(url)
   lastSearch.value = searchInput.value
+  const res = await axios.get(url)
   results.value = res.data
   loading.value = false
 }
